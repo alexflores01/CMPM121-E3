@@ -1,3 +1,13 @@
+//Source URL: https://pngtree.com/freepng/vector-illustration-of-round-glasses-with-flat-designs_4192653.html
+//Image is free to use from pngtree.com
+// @deno-types="./asset-url.d.ts"
+import glassesUrl from "./assets/roundGlasses.png?no-inline";
+
+//Source URL: https://pngtree.com/freepng/gentleman-bow-tie_4293646.html
+//Image is free to use from pngtree.com
+// @deno-types="./asset-url.d.ts"
+import bowtieUrl from "./assets/bowtie.png?no-inline";
+
 const portrait = document.querySelector<HTMLDivElement>("#portrait")!;
 const spin = document.querySelector<HTMLButtonElement>("#spin")!;
 
@@ -5,7 +15,10 @@ const spin = document.querySelector<HTMLButtonElement>("#spin")!;
 const face = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 face.setAttribute("viewBox", "0 0 200 200");
 face.setAttribute("role", "img");
-face.setAttribute("aria-label", "A neutral face");
+face.setAttribute(
+  "aria-label",
+  "A neutral face with a bowtie and round glasses",
+);
 
 const head = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
 head.setAttribute("cx", "100");
@@ -58,6 +71,28 @@ mouth.setAttribute("stroke", "#302c29");
 mouth.setAttribute("stroke-width", "4");
 mouth.setAttribute("stroke-linecap", "round");
 face.append(mouth);
+
+const glassesImage = document.createElementNS(
+  "http://www.w3.org/2000/svg",
+  "image",
+);
+glassesImage.setAttribute("href", glassesUrl);
+glassesImage.setAttribute("x", "0");
+glassesImage.setAttribute("y", "0");
+glassesImage.setAttribute("width", "200");
+glassesImage.setAttribute("height", "200");
+face.append(glassesImage);
+
+const bowtieImage = document.createElementNS(
+  "http://www.w3.org/2000/svg",
+  "image",
+);
+bowtieImage.setAttribute("href", bowtieUrl);
+bowtieImage.setAttribute("x", "0");
+bowtieImage.setAttribute("y", "77");
+bowtieImage.setAttribute("width", "200");
+bowtieImage.setAttribute("height", "200");
+face.append(bowtieImage);
 
 portrait.append(face);
 
