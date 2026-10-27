@@ -5,7 +5,7 @@ const spin = document.querySelector<HTMLButtonElement>("#spin")!;
 const face = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 face.setAttribute("viewBox", "0 0 200 200");
 face.setAttribute("role", "img");
-face.setAttribute("aria-label", "A neutral face");
+face.setAttribute("aria-label", "A plain face with red acne on cheeks");
 
 const head = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
 head.setAttribute("cx", "100");
@@ -58,6 +58,22 @@ mouth.setAttribute("stroke", "#302c29");
 mouth.setAttribute("stroke-width", "4");
 mouth.setAttribute("stroke-linecap", "round");
 face.append(mouth);
+
+for (let i = 0; i < 100; i++) {
+  const dot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+  const isRight = i % 2 === 0;
+  const baseX = isRight ? 145 : 55;
+  const baseY = 100;
+
+  const offsetX = (Math.random() * 24) - 12;
+  const offsetY = (Math.random() * 30) - 12;
+
+  dot.setAttribute("cx", String(baseX + offsetX));
+  dot.setAttribute("cy", String(baseY + offsetY));
+  dot.setAttribute("r", "1.5");
+  dot.setAttribute("fill", "#d9534f");
+  face.append(dot);
+}
 
 portrait.append(face);
 
