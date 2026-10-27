@@ -1,5 +1,9 @@
 # Portrait Plan
 
+## Chosen Branch C
+
+- I chose this branch because C provides the most sticking visual, featuring a shocked face with blue to white gradient eyes and a curved open mouth path. My criteria was to be easy recongize and simple to implement, which branch C does. Branch C has been merged into main.
+
 ## Branch A: Geometry
 
 **Explored on branch A.**
